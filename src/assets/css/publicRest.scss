@@ -1,0 +1,325 @@
+/*************************css常用的类名部分********************************/
+/*position*/
+.rel{position:relative;}
+.abs{position:absolute;}
+.zi1{z-index: 1;}
+.zi9{z-index: 9;}
+.zi-sm{z-index: 99;}
+.zi-mid{z-index: 999;}
+.zi-max{z-index: 9999;}
+/*float*/
+.fl{float:left;}
+.fr{float:right;}
+/*下划线*/
+.f-tdu,.f-tdu:hover{text-decoration:underline;}
+.f-tdn,.f-tdn:hover{text-decoration:none;}
+/*color*/
+.cf{color:#fff;}
+.c0{color:#000;}
+.cc{color:#ccc;}
+.c9{color:#999;}
+.c6{color:#666;}
+.c3{color:#333;}
+.cl28{color:#282828;}
+.clbtn{color:#358BFE;}
+.clborder{color:#DCDCDC;}
+.clbg{color:#f4f4f7;}
+.cl-green-btn{color:#00CF8F;}
+.cred{color:#ec584e;}
+/*bg-color*/
+.bgf{background-color:#fff;}
+.bgef4{background-color:#f4f4f7;}
+.bg0{background-color:#000;}
+.bgfb{background-color:#fbfbfb;}
+.bgf5{background-color:#f5f5f5;}
+.bgf0{background-color:#f0f0f0;}
+.bgeb{background-color:#ebebeb;}
+.bge0{background-color:#e0e0e0;}
+.bgred{background-color:#ec584e;}
+/*背景透明*/
+.bgop1{background:rgba(0,0,0,0.1);}
+.bgop2{background:rgba(0,0,0,0.2);}
+.bgop-td1{background:rgba(53,139,254,0.1);}
+/*换行*/
+.wbb{word-break: break-all; word-wrap:break-word;}
+/*单行文字溢出省略号*/
+.f-toe{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+/*font-style*/
+.ft-n{font-weight:normal; font-style:normal;}
+.ft-b{font-weight: bold;}
+/*text-align*/
+.tac{text-align:center;}
+.tar{text-align:right;}
+.tal{text-align:left;}
+.clearfix {zoom: 1;}
+.clearfix:after{content: ".";display: block;height: 0; clear: both;visibility: hidden;}
+/*text-indent*/
+.tin0{text-indent: 0.5em;}
+.tin1{text-indent: 1em;}
+.tin2{text-indent: 2em;}
+/*wrap*/
+.w1180{max-width:1180px;margin:0 auto;}
+/*全局table 下边框去除
+.el-table td{
+  border:none;
+  border-bottom:none;
+}*/
+/* element-ui滚动条样式 */
+/* .element-scroll-bar{
+  height: 100%;
+  overflow: hidden;
+  .el-scrollbar__wrap{
+    overflow-x: hidden;
+  }
+} */
+/*弹框表格行高*/
+.new-td-lineheiht td,.new-td-lineheiht th{padding:8px 0;}
+/*修改分页样式*/
+.noposition-bt-page{display: flex;vertical-align: middle;align-items: center;
+  /* padding:20px;  */justify-content: flex-end;}
+  
+/***************************scss带类名的样式以及按钮等公共的样式部分*********************************/
+$clborder:#DCDCDC;
+$white: #fff;
+/*cursor*/
+@each $curi in pointer,default,help,move{
+  .cur-#{$curi}{
+    cursor:$curi;
+  }
+}
+/*display*/
+@each $dis in none,inline,inline-block,table-cell,block {
+    .dp-#{$dis}{
+      display: $dis;
+    }
+}
+/*padding&margin*/
+@for $pdi from 0 through 6{
+  .pd#{5*$pdi}{
+    padding:5px*$pdi;
+  }
+  .pt#{5*$pdi}{
+    padding-top:5px*$pdi;
+  }
+  .pr#{5*$pdi}{
+    padding-right:5px*$pdi;
+  }
+  .pb#{5*$pdi}{
+    padding-bottom:5px*$pdi;
+  }
+  .pl#{5*$pdi}{
+    padding-left:5px*$pdi;
+  }
+  .mg#{5*$pdi}{
+    margin:5px*$pdi;
+  }
+  .mt#{5*$pdi}{
+    margin-top:5px*$pdi;
+  }
+  .mr#{5*$pdi}{
+    margin-right:5px*$pdi;
+  }
+  .mb#{5*$pdi}{
+    margin-bottom:5px*$pdi;
+  }
+  .ml#{5*$pdi}{
+    margin-left:5px*$pdi;
+  }
+}
+/*line-height*/
+$lnhgArr:(normal,14,16,18,20,22,24,26,28,30,32,34,36,38,40,46,50);
+@each $lnhgi in $lnhgArr {
+  @if $lnhgi == normal{
+    .lhn {line-height: normal; }
+  }@else{
+    .lh#{$lnhgi} {line-height: $lnhgi * 1px; }
+  }  
+}
+/*height*/
+$hgArr:(28,34);
+@each $hgi in $hgArr {
+  .fs#{$hgi} { height: $hgi * 1px;line-height: $hgi * 1px; }
+}
+/*font-size*/
+$fsarr:(10,12,14,16,18,20,22,24,26);
+@each $fsi in $fsarr {
+  .fs#{$fsi} { font-size: $fsi * 1px; }
+}
+
+//换行
+@mixin wbb(){
+  word-break: break-all; word-wrap:break-word;
+}
+// triangle 三角箭头
+%triangle-basic {
+position:absolute;
+content: "";
+height: 0;
+width: 0;
+line-height: 0;
+overflow: hidden;
+}
+@mixin triangle($direction,$borderWidth,$borderColor) {
+    @extend %triangle-basic;
+    @if $direction == top {
+    border-top: $borderWidth solid $borderColor;
+    border-left: $borderWidth dashed transparent;
+    border-right: $borderWidth dashed transparent;
+    }
+    @else if $direction == right {
+    border-right: $borderWidth solid $borderColor;
+    border-top: $borderWidth dashed transparent;
+    border-bottom: $borderWidth dashed transparent;
+    }
+    @else if $direction == bottom {
+    border-bottom: $borderWidth solid $borderColor;
+    border-left: $borderWidth dashed transparent;
+    border-right: $borderWidth dashed transparent;
+    }
+    @else if $direction == left {
+    border-left: $borderWidth solid $borderColor;
+    border-top: $borderWidth dashed transparent;
+    border-bottom: $borderWidth dashed transparent;
+    }
+}
+.common-triangle{
+   @include triangle($direction:right,$borderWidth:10px,$borderColor:$clborder);
+}
+//封装按钮
+@mixin btn($lineHeight:28px,$widths:80px,$fontSize:14px,$color:#358BFE,
+  $bgColor:$white,$borderRadius:4px,$pdl:0,$pdr:0,$displays:inline-block,
+  $borderWidth:1px,$borderWeight:solid,$borderColor:#358BFE,$mgrs:20px,
+  $hover:$white, $hoverBg:#358BFE){
+  width: $widths;
+  line-height: $lineHeight;
+  color:$color;   
+  background: $bgColor;
+  font-size: $fontSize;
+  display: $displays;
+  padding-left:$pdl;
+  padding-right:$pdr;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  border:$borderWidth $borderWeight $borderColor;
+  margin-right: $mgrs;
+  cursor: pointer;
+  &:hover { color: $hover;  background: $hoverBg;}
+}
+@mixin bthHover($color:$white,$bgColor:#358BFE){
+  color:$color;
+  background: $bgColor;
+}
+.common-btn{//普通按钮样式
+  @include btn();
+}
+.common-disabled-btn{//禁用按钮默认
+  @include btn($color:#B4B4B4,
+  $bgColor:rgba(245,245,245,1),
+  $hover:#B4B4B4,
+  $hoverBg:rgba(245,245,245,1),
+  $borderColor:rgba(220,220,220,1))
+}
+.common-export-btn{//导入
+  @include btn($color:#358BFE,
+  $widths:auto,
+  $bgColor:rgba(53,139,254,0.1),
+  $hover:#358BFE,
+  $borderRadius:100px,
+  $pdl:15px,
+  $pdr:15px,
+  $hoverBg:rgba(53,139,254,0.1),
+  $borderColor:none)
+}
+.common-full-btn{//下载预览编辑实心按钮
+  @include btn(
+    $color:$white,
+    $bgColor:#358BFE,
+    $hover:$white,
+    $hoverBg:#358BFE,)
+}
+.common-tab-btn{//切换导航按钮
+  @include btn(
+    $color:#358BFE,
+    $bgColor:rgba(53,139,254,0.2),
+    $hover:#358BFE,
+    $hoverBg:rgba(53,139,254,0.2),
+    $borderWidth:0,
+    $lineHeight:40px,
+    $pdl:30px,
+    $pdr:30px,
+    $widths:auto
+  )
+}
+//多行溢出省略号
+@mixin commonell($clamp:1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;//将元素设为盒子伸缩模型显示
+  -webkit-box-orient: vertical;//伸缩方向设为垂直方向
+  -webkit-line-clamp: $clamp;//超出4行隐藏，并显示省略号
+}
+.common-ell{//通用溢出省略号样式
+  @include commonell();
+}
+//flex居中布局
+@mixin flexMiddle($flexDirection:row,$verticalAlign:middle
+  ,$alignIterms:center,$flexWrap:nowrap,$justify:flex-end){
+  display:-webkit-box; //旧语法
+  display:-webkit-flex; //新语法
+  display:flex;
+  flex-direction:$flexDirection;
+  vertical-align: $verticalAlign;
+  align-items: $alignIterms;
+  flex-wrap:$flexWrap;
+  justify-content:$justify;
+}
+.flex-middle{//通用flex垂直居中
+  @include flexMiddle();
+}
+//边框盒阴影
+@mixin commonShadow($width1:0px,$width2:0px,$width3:6px,$width4:6px,$rgbas:rgba(195,195,195,0.1)){
+  box-shadow:$width1 $width2 $width3 $width4 $rgbas;
+}
+.common-shadow{//基础盒阴影类名
+  @include commonShadow();
+}
+// 边框样式
+@mixin barderBtn( $width: rem(1), $value: solid, $color: $cb) {
+  border: $width $value $color
+}
+/*字间隔*/
+@mixin letterSpac($num) {
+  letter-spacing:$num;
+}
+.ls3{//默认间隔类名
+  @include letterSpac(2px);
+}
+/*行高*/
+@mixin lineHeights($num) {
+  line-height:$num;
+}
+.sclh25{//25px行高类名
+  @include lineHeights(25px);
+}
+/*带按钮的头*/
+@mixin btnHead($height:60px,$justify:flex-end,$bgc:$white) {
+  width: 100%;
+  height:$height;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content:$justify;
+  background: $bgc
+}
+.btn-head{//普通头类名
+  @include btnHead();
+}
+ /*边框线*/
+ $bdcol1:#DCDCDC;
+ @each $directions in top,right,bottom,left {
+  .bd-#{$directions}{
+      border-#{$directions}:1px solid $bdcol1;
+  }
+}
