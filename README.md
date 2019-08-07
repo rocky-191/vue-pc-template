@@ -1,4 +1,29 @@
-# vue-pc-template
-基于vue-cli3.0的vue模版，里面包含了基本的框架结构目录，开箱即用即可。
+# emergency-lib
 
-git clone之后，npm install即可开发使用
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

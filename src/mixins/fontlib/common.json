@@ -1,0 +1,48 @@
+{
+    "addnew": "新增",
+    "newdatetype": "新增日期类型",
+    "query": "查询",
+    "reset": "重置",
+    "export": "导出",
+    "import": "导入",
+    "downimporttemplate": "导入模板下载",
+    "importdowntemplate": "导入下载模板",
+    "importtemplate": "导入模板",
+    "batchcheck": "批量审定",
+    "batchdel": "批量删除",
+    "newstaff": "新增人员",
+    "delstaff": "删除人员",
+
+    "save": "保存",
+    "cancel": "取消",
+    "edit": "编辑",
+    "ensure": "确定",
+    "back": "返回",
+    "clear": "清空",
+    "savedraft": "存为草稿",
+    "savefinalized": "存为定稿",
+
+    "query2": "查 询",
+    "ensure2": "确 定",
+    "back2": "返 回",
+    "cancel2": "取 消",
+    "clear2": "清 空",
+    "save2": "保 存",
+    "none": "空",
+
+    "mes": {
+        "deleteTitle": "是否要删除该条信息",
+        "deleteInfo": "删除成功",
+        "error": "请联系管理员",
+        "title": "请填写必填字段"
+    },
+
+    "tableInfo": {
+        "details": "详情",
+        "add": "添加",
+        "edit": "编辑",
+        "assignRoles": "分配角色",
+        "assignResources": "分配资源",
+        "delete": "删除"
+      }
+}

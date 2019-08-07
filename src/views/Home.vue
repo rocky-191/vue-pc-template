@@ -1,11 +1,10 @@
 <template>
   <div>
-    hello world
+    首页
   </div>
 </template>
 
 <script>
-
 export default {
   name: "home"
 };

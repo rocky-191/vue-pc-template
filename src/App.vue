@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <router-view />
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive">
+        <!-- 这里是会被缓存的视图组件，比如列表A页面 -->
+      </router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive">
+      <!-- 这里是不被缓存的视图组件，比如详情B页面-->
+    </router-view>
   </div>
 </template>
 
 <style lang="scss">
 body {
-  min-width: 1200px;
+  // min-width: 1200px;
   margin: 0 auto;
   overflow: auto;
-  overflow-y: hidden;
+  // overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
