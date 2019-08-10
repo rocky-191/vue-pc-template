@@ -7,9 +7,14 @@
     "build": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,vue}": [
-      "prettier --tab-width 2 --write",
+      "prettier --write",
       "vue-cli-service lint --fix",
       "git add"
     ]
