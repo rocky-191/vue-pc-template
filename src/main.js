@@ -3,7 +3,7 @@ import App from "./App.vue";
 import "./assets/style/reset.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import mixins from '@/mixins';
+import mixins from "@/mixins";
 import router from "@/router";
 import store from "@/store";
 // import axios from "axios";
@@ -27,11 +27,11 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
 
- // 混入会占用 Vue 组件的命名属性，内部重复命名会覆写混入的方法
- // 这里混入了 gf 方法
+// 混入会占用 Vue 组件的命名属性，内部重复命名会覆写混入的方法
+// 这里混入了 gf 方法
 Vue.use(mixins);
 
-console.log(process.env)
+console.log(process.env);
 
 // Vue.prototype.$Base_url = window.location.protocol + "//" + window.location.host;
 

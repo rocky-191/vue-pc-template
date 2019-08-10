@@ -23,7 +23,7 @@ const globalAPI = {
         Message({
           showClose: true,
           message: `${txt}`,
-          type: "info" //之后替换成general
+          type: "general" //之后替换成general
         });
         break;
       case 4:
@@ -39,10 +39,10 @@ const globalAPI = {
         Message({
           showClose: true,
           message: `${txt}`,
-          type: "error" // severity
+          type: "severity" // severity
         });
         break;
     }
   }
 };
-export default globalAPI; // this.globalAPI就能调用全局信息
+export default globalAPI;

@@ -1,13 +1,18 @@
 // 封装axios
 import axios from "axios";
 import router from "../router";
-// import { Message } from "element-ui";
+// import { Message } from "fw-ui";
+import noLoadingList from "./noLoadingList";
+import utils from "@/utils/event";
 import globalAPI from "@/utils/globalAPI.js";
-const service = axios.create({
+
+let axiosConfig = {
   // 设置超时时间
   timeout: 10000,
-  baseURL: process.env.BASE_URL // api 的 base_url
-});
+  baseURL: process.env.BASE_URL, // api 的 base_url
+  withCredentials: true
+};
+const service = axios.create(axiosConfig);
 
 let pending = []; //声明一个数组用于存储每个ajax请求的取消函数和ajax标识
 let cancelToken = axios.CancelToken;
@@ -27,6 +32,9 @@ let removeRepeatUrl = ever => {
  */
 service.interceptors.request.use(
   config => {
+    if (noLoadingList.indexOf(config.url) === -1) {
+      utils.showFullScreenLoading();
+    }
     //在一个ajax发送前执行一下取消操作
     removeRepeatUrl(config);
     config.cancelToken = new cancelToken(c => {
@@ -40,6 +48,7 @@ service.interceptors.request.use(
     return config;
   },
   error => {
+    utils.tryHideFullScreenLoading();
     console.log(error); // for debug
     return Promise.reject(error);
   }
@@ -51,6 +60,7 @@ service.interceptors.request.use(
  */
 service.interceptors.response.use(
   response => {
+    utils.tryHideFullScreenLoading();
     removeRepeatUrl(response.config); //在一个ajax响应后再执行一下取消操作，把已经完成的请求从pending中移除
     const responseCode = response.status;
     let rightCode = [10000, 10001, 10002, 10003, 10004, 200];
@@ -77,6 +87,7 @@ service.interceptors.response.use(
     }
   },
   error => {
+    utils.tryHideFullScreenLoading();
     // 可以根据后端返回的状态码进行不同的操作
     const responseCode = error.response.status;
     switch (responseCode) {
