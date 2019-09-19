@@ -3,10 +3,10 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-import module1 from "./module1";
+import commonStore from "./common";
 
 export default new Vuex.Store({
   modules: {
-    module1
+    commonStore
   }
 });

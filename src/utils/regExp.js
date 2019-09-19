@@ -1,3 +1,4 @@
+/* eslint-disable */
 var regExp = {
   // 验证微信
   isWeixin() {

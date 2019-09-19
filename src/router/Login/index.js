@@ -1,6 +1,6 @@
 export default [
   {
-    path: "/Login",
+    path: "/",
     name: "Login",
     component: () => import("@/views/Login")
   }

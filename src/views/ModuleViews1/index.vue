@@ -1,9 +1,9 @@
 <template>
-  <div></div>
+  <div>hello world</div>
 </template>
 
 <script>
 export default {
-  name: "test"
+  name: "ModuleViews1"
 };
 </script>

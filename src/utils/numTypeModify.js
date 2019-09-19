@@ -1,3 +1,4 @@
+/* eslint-disable */
 //数据格式化 去除全部空格
 const allTrim = function(str) {
   if (str == undefined || str == null) {
@@ -113,7 +114,7 @@ const tableRowClassName = function({ row, rowIndex }) {
 };
 
 //数据校验 验证特殊字符存在
-const htmlTrim=function(str) {
+const htmlTrim = function(str) {
   if (str == undefined || str == null) {
     return str;
   }
@@ -121,16 +122,16 @@ const htmlTrim=function(str) {
     /[`~!@#$%^&*()_\-+=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/im
   );
   return (newstr && true) || false;
-}
+};
 
 //数据校验 验证只存在数字及小数点
-const numTrim=function(str) {
+const numTrim = function(str) {
   if (str == undefined || str == null) {
     return true;
   }
   let newstr = str.match(/^([1-9][0-9]*)+(.[0-9]*)?$|^0.([0-9]*)?$/im);
   return (newstr && true) || false;
-},
+};
 
 //日期格式化yyyy-mm-dd hh-mm-dd
 const formatTime = function(date) {
@@ -145,7 +146,7 @@ const formatTime = function(date) {
   var second = date.getSeconds();
   second = minute < 10 ? "0" + second : second;
   return y + "-" + m + "-" + d + " " + h + ":" + minute + ":" + second;
-}
+};
 
 export default {
   allTrim,

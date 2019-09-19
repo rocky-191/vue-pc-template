@@ -1,21 +1,19 @@
 <template>
-  <div id="app">
-    <keep-alive>
-      <router-view v-if="$route.meta.keepAlive">
-        <!-- 这里是会被缓存的视图组件，比如列表A页面 -->
-      </router-view>
-    </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive">
-      <!-- 这里是不被缓存的视图组件，比如详情B页面-->
-    </router-view>
+  <div id="app" style="height: 100%;">
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
+html,
+body {
+  height: 100% !important;
+}
 body {
   // min-width: 1200px;
   margin: 0 auto;
   overflow: auto;
+  background: #e6e9f1;
   // overflow-y: hidden;
 }
 

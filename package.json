@@ -1,10 +1,11 @@
 {
-  "name": "emergency-lib",
+  "name": "vue-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode dev",
     "build": "vue-cli-service build --mode prod",
+    "testing": "vue-cli-service build --mode test",
     "lint": "vue-cli-service lint --fix"
   },
   "husky": {
@@ -14,21 +15,24 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,vue}": [
-      "prettier --write",
+      "prettier --tab-width 2 --write",
       "vue-cli-service lint --fix",
       "git add"
     ]
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
-    "element-ui": "^2.10.1",
+    "element-ui": "^2.12.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "@babel/plugin-transform-async-to-generator": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
@@ -38,10 +42,15 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "file-save": "^0.2.0",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "uppercamelcase": "^3.0.0",
     "vue-template-compiler": "^2.6.10"
   }
 }

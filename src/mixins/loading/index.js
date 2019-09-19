@@ -1,3 +1,4 @@
+/* eslint-disable */
 const load_option = {
   // 配置初始参数
   lock: true,

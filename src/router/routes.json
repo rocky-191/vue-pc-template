@@ -1,0 +1,70 @@
+[
+  {
+    "index": "1",
+    "name": "一级菜单一",
+    "url": "/A",
+    "icon": "el-icon-location",
+    "level": 1,
+    "children": [
+      {
+        "index": "1-1",
+        "name": "A二级菜单一",
+        "url": "/A/A1",
+        "icon": "el-icon-setting",
+        "level": 2,
+        "children": [
+          {
+            "index": "1-1-1",
+            "name": "三级菜单一",
+            "url": "/ModuleViews1",
+            "icon": "",
+            "level": 3,
+            "children": []
+          },
+          {
+            "index": "1-1-2",
+            "name": "三级菜单二",
+            "url": "/A/A1/a2",
+            "icon": "",
+            "level": 3,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": "2",
+    "name": "一级菜单二",
+    "url": "/B",
+    "icon": "el-icon-location",
+    "level": 1,
+    "children": [
+      {
+        "index": "2-1",
+        "name": "B二级菜单一",
+        "url": "/B/B1",
+        "icon": "el-icon-setting",
+        "level": 2,
+        "children": [
+          {
+            "index": "2-1-1",
+            "name": "三级菜单一",
+            "url": "/B/B1/b1",
+            "icon": "",
+            "level": 3,
+            "children": []
+          },
+          {
+            "index": "2-1-2",
+            "name": "三级菜单二",
+            "url": "/B/B1/b2",
+            "icon": "",
+            "level": 3,
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

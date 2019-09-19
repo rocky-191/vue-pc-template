@@ -53,10 +53,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 │   │   │   │   ├── componentA.vue              // 具体组件
 │   │   │   │   ├── index.js                    // 组件出口
 │   │   ├── index.js                            // 所有组件统一出口
-│   ├── directives                              // 全局指令
-│   │   ├── index.js
-│   ├── filters                                 // 全局过滤器
-│   │   ├── index.js
+|   ├── vueExtend                               // vue扩展
+│   │   ├── directives                          // 全局指令
+│   │   │   ├──index.js
+│   │   ├── filters                             // 全局过滤器
+│   │   │   ├──index.js
 │   ├── views                                   // 项目页面级组件（按模块划分）
 │   │   ├── Login                               // 模块名称（示例）
 │   │   │   ├── index.vue                       // 页面级组件示例
