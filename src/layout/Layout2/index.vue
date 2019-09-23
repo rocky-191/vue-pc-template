@@ -168,7 +168,12 @@ export default {
       // 存储激活的头部菜单
       sessionStorage.setItem("activeIndex", key);
       if (flag !== 2 || this.$route.path === "/index") {
-        let secondMenu = this.resolvedSecondMenuData[0].children[0].url;
+        let secondMenu = "";
+        if (this.resolvedSecondMenuData[0].children.length !== 0) {
+          secondMenu = this.resolvedSecondMenuData[0].children[0].url;
+        } else {
+          secondMenu = this.resolvedSecondMenuData[0].url;
+        }
         this.$router.push({
           path: secondMenu
         });
